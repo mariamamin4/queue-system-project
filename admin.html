@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard — Queuely</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <!-- Main custom styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" style="height:34px;">
+        Queuely
+      </a>
+    </div>
+  </nav>
+
+  <!-- ADMIN PANEL -->
+  <div class="container my-5">
+    <div class="admin-card">
+      <h3 class="mb-4">Admin Dashboard</h3>
+
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Ticket #</th>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="queueTable">
+          <!--bookings-->
+        </tbody>
+      </table>
+
+      <div class="mt-4">
+        <button id="callNextBtn" class="btn btn-success me-2">Call Next</button>
+        <button id="clearAllBtn" class="btn btn-danger">Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Admin JS -->
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

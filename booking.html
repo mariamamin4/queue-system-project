@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Ticket — Queuely</title>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" style="height:34px;">
+        Queuely
+      </a>
+    </div>
+  </nav>
+
+  <!-- BOOKING FORM -->
+  <div class="container my-5">
+    <div class="booking-card">
+      <h3 class="mb-4">Book Your Ticket</h3>
+
+      <form id="bookingForm">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="e.g. 01012345678" required>
+        </div>
+
+        <!-- Branch -->
+        <div class="mb-3">
+          <label for="branch" class="form-label">Branch</label>
+          <select class="form-select" id="branch" required>
+            <option value="">Select branch</option>
+            <option value="hospital">Main Hospital</option>
+            <option value="bank">City Bank</option>
+            <option value="gov">Government Service Center</option>
+          </select>
+        </div>
+
+        <!-- Service -->
+        <div class="mb-3">
+          <label for="service" class="form-label">Service</label>
+          <select class="form-select" id="service" required>
+            <option value="">Select service</option>
+            <option value="checkup">Medical Check-up</option>
+            <option value="cash">Cash Withdrawal</option>
+            <option value="license">License Renewal</option>
+          </select>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="date" class="form-control" id="date" required>
+        </div>
+
+        <!-- Time -->
+        <div class="mb-3">
+          <label for="time" class="form-label">Time</label>
+          <input type="time" class="form-control" id="time" required>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-success w-100">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Booking JS -->
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

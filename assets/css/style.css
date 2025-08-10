@@ -1,0 +1,269 @@
+/* ===============================
+   Global Styles
+================================= */
+:root {
+  --accent: #d5fa6e; /* اللون الأساسي */
+  --dark:#20453b;
+  --muted: #e4e4e4;
+  --light-bg: #f6f8f9;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   Navbar
+================================= */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.09);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+ 
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+.navbar-brand img {
+  height: 45px;
+ margin: 0;
+  border-radius: 12px;
+}
+
+.navbar-brand h3{
+    margin: 0;
+   font-weight: 700;
+}
+.navbar-light .nav-link {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.navbar-light .nav-link:hover {
+  color: var(--accent);
+}
+
+/* ===============================
+   Buttons
+================================= */
+.btn-success {
+  background-color: var(--accent) !important;
+ 
+}
+
+.btn-success:hover {
+  background-color: var(--dark)!important;
+  border-color: var(--accent) !important;
+}
+
+.btn-outline {
+  color: var(--dark) !important;
+  border-color: var(--accent) !important;
+}
+
+.btn-outline:hover {
+  background-color: var(--dark) !important;
+  color: white !important;
+}
+.btn-outline-light{
+
+        background-color: var(--accent) !important;
+    border: 1px solid var(--dark);
+    color: white;
+
+
+}
+.btn-outline-light:hover{
+    background-color: var(--dark) !important;
+    border: 1px solid var(--accent) !important;
+     color: white;
+}
+
+/* ===============================
+   Cards & Sections
+================================= */
+.card, .booking-card, .ticket-card, .admin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.feature-card {
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   Hero Section
+================================= */
+
+ .hero {
+    background: linear-gradient(180deg, #20453b 0%, #20453b9c 35%, #20453b07 100%);
+      color: #fff;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .card-mock {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      color: #0b2431;
+    }
+
+/* ===============================
+   Stats Section
+================================= */
+.stat {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--muted);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15,20,25,0.06);
+    }
+
+.stat h3 {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.stat p {
+  color: var(--muted);
+}
+
+/* ===============================
+   Testimonials
+================================= */
+.testimonial {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.testimonial strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ===============================
+   Featuress
+================================= */
+
+.feature-card {
+      background:var(--muted);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 6px 20px rgba(15,20,25,0.05);
+      height:100%;
+    }
+
+/* ===============================
+   CTA
+================================= */
+.cta{
+    background: linear-gradient(180deg, #20453b 0%, #20453b9c 35%, #20453b07 100%);
+ border-radius:12px;
+  color:#fff;
+}
+
+
+/* ===============================
+   Footer
+================================= */
+footer {
+  background: #f0f3f4;
+  padding: 2rem 0;
+}
+
+footer h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a , footer li{
+  text-decoration: none;
+  color: var(--dark);
+}
+
+footer a:hover , footer li:hover{
+  color: #4b7347e1;
+}
+
+/* ===============================
+   Booking Form
+================================= */
+    .booking-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      max-width: 600px;
+      margin: auto;
+    }
+
+/* ===============================
+   Ticket Page
+================================= */
+  .ticket-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    .ticket-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #28a745;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      background: #ffc107;
+      color: #000;
+      font-weight: 500;
+    }
+
+/* ===============================
+   Admin Table
+================================= */
+    .admin-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+/* ===============================
+   Responsive tweaks
+================================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+  }
+}
