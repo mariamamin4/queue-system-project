@@ -17,15 +17,14 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
         date: document.getElementById('date').value,
         time: document.getElementById('time').value,
         ticketNumber: Math.floor(Math.random() * 9000) + 1000, // رقم عشوائي للتذكرة
-        status: "waiting"
+        status: "waiting",
+         username: loggedInUser.username
     };
 
     // خزّن البيانات في localStorage
  let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
 bookings.push(bookingData);
 localStorage.setItem('bookings', JSON.stringify(bookings));
-bookingData.username = loggedInUser.username;
-
 
     // انتقل لصفحة التذكرة
     window.location.href = 'ticket.html';

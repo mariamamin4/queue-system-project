@@ -2,10 +2,11 @@
    Global Styles
 ================================= */
 :root {
-  --accent: #d5fa6e; /* اللون الأساسي */
-  --dark:#20453b;
-  --muted: #e4e4e4;
-  --light-bg: #f6f8f9;
+  --accent: #a8cbed; /* اللون الأساسي */
+  --dark:#113254;
+  --muted: #d5e4f5;
+  --light-bg: #e8f1fa;
+  --formslable:#ebf1f7;
 }
 
 body {
@@ -22,37 +23,42 @@ body {
 ================================= */
 .navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,0.09);
-  background-color: transparent;
-  display: flex;
+  background-color:white;
+ 
+}
+.navbar .container{
+    display: flex;
+  justify-content: space-between; 
   align-items: center;
-  justify-content: space-between;
-  position: relative;
+
+}
+.navbar-nav {
+  display: flex;
+  gap: 40px; 
+  align-items: center;
+  font-size: 20px;
+ transition: 0.6s ease-in-out;
+  }
+
+.navbar-brand img , .foot-img{
+  height: 82px;
+   margin: 0;
+  border-radius: 50%;
+  width: 82px;
  
 }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-}
-.navbar-brand img {
-  height: 45px;
- margin: 0;
-  border-radius: 12px;
-}
-
-.navbar-brand h3{
-    margin: 0;
-   font-weight: 700;
-}
 .navbar-light .nav-link {
-  color: var(--dark);
-  font-weight: 500;
+  color: var(--dark) !important; 
+  font-weight: 700;
+ 
 }
 
 .navbar-light .nav-link:hover {
-  color: var(--accent);
+  color: var(--accent) !important; 
+   scale: 1.08;
 }
+singup-login
 
 /* ===============================
    Buttons
@@ -64,7 +70,16 @@ body {
 
 .btn-success:hover {
   background-color: var(--dark)!important;
+}
+.btn-sign{
+      color: white !important;
+  border-color: var(--muted) !important;
+  background-color: var(--dark);
+}
+.btn-sign:hover{
+     color: var(--dark) !important;
   border-color: var(--accent) !important;
+  background-color: var(--accent);
 }
 
 .btn-outline {
@@ -79,7 +94,7 @@ body {
 .btn-outline-light{
 
         background-color: var(--accent) !important;
-    border: 1px solid var(--dark);
+    border: 1px solid var(--dark) !important;
     color: white;
 
 
@@ -89,6 +104,23 @@ body {
     border: 1px solid var(--accent) !important;
      color: white;
 }
+.booking-btn{
+  background-color: #2776c4 !important;
+  color: white;
+  border-radius: 15px;
+   padding: 6px 14px;
+}
+.booking-btn:hover{
+  background-color: var(--accent)!important;
+  color: var(--dark);
+}
+.singup-login{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+   gap:20px
+}
+
 
 /* ===============================
    Cards & Sections
@@ -112,7 +144,7 @@ body {
 ================================= */
 
  .hero {
-    background: linear-gradient(180deg, #20453b 0%, #20453b9c 35%, #20453b07 100%);
+    background: linear-gradient(180deg, #09192a 0%,#194c80a5 35%, #a8caed36 100%);
       color: #fff;
       padding: 5rem 0;
       position: relative;
@@ -183,7 +215,7 @@ body {
    CTA
 ================================= */
 .cta{
-    background: linear-gradient(180deg, #20453b 0%, #20453b9c 35%, #20453b07 100%);
+   background: linear-gradient(180deg, #09192a 0%,#194c80a5 35%, #a8caed36 100%);
  border-radius:12px;
   color:#fff;
 }
@@ -208,7 +240,7 @@ footer a , footer li{
 }
 
 footer a:hover , footer li:hover{
-  color: #4b7347e1;
+  color:var(--accent);
 }
 
 /* ===============================
@@ -221,6 +253,9 @@ footer a:hover , footer li:hover{
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       max-width: 600px;
       margin: auto;
+    }
+    #bookingForm .booking-input{
+      background-color: var(--formslable) !important;
     }
 
 /* ===============================
@@ -238,14 +273,14 @@ footer a:hover , footer li:hover{
     .ticket-number {
       font-size: 3rem;
       font-weight: bold;
-      color: #28a745;
+      color:var(--dark);
     }
     .status-badge {
       display: inline-block;
       padding: 0.4rem 1rem;
       border-radius: 20px;
-      background: #ffc107;
-      color: #000;
+      background:var(--accent);
+      color: var(--dark);
       font-weight: 500;
     }
 
@@ -257,6 +292,81 @@ footer a:hover , footer li:hover{
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+/* =============================
+      login page
+================================*/
+    .login-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      max-width: 400px;
+      margin: auto;
+      margin-top: 5%;
+    }
+    .login-form{
+       background-color: var(--formslable);
+    }
+/* =============================
+      signup page
+================================*/
+.signup-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      max-width: 400px;
+      margin: auto;
+      margin-top: 5%;
+    }
+    .signup-form{
+       background-color: var(--formslable);
+    }
+
+  /*========================
+      contact page
+  ===========================*/
+
+   .contact-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+
+    h2 {
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+   #contactForm .form-label {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+   #contactForm .form-control{
+      background: var(--formslable); 
+
+    }
+
+    .btn-submit {
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .contact-info p {
+      margin: 0;
+      color: var(--dark);
+    }
+    .contact-info i {
+      color: var(--accent);
+      margin-right: 8px;
     }
 
 /* ===============================
