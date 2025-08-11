@@ -23,7 +23,6 @@
       <a class="navbar-brand " href="index.html">
         <img src="assets/images/logo.png" alt="Logo" > 
       </a>
-      
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
@@ -31,7 +30,8 @@
 
 
       <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ">
+
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
           <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
@@ -43,7 +43,7 @@
 
         </ul>
         
-      <div class="singup-login ">
+      <div class="singup-login ms-auto">
         <a href="login.html" class="btn btn-outline">Login</a>
         <a href="signup.html" class="btn btn-sign">Sign Up</a>
       </div>
@@ -57,15 +57,15 @@
       <div class="row align-items-center">
      
         <div class="col-lg-6 text-light">
-          <h1 class="display-5 fw-bold">Effortless Queue Management for a Smarter Service</h1>
-          <p class="lead text-light" style="opacity:0.9;">
-            Reduce waiting times, notify customers in real-time, and manage multiple branches with a single dashboard.
-            Perfect for hospitals, banks and public services.
-          </p>
+         <h1 class="display-5 fw-bold">Smart Queue Management Made Easy</h1>
+        <p class="lead text-light" style="opacity:0.9;">
+        Streamline queues, cut wait times, and keep customers updated &ensp; all in one platform.
+        </p>
 
-          <div class="mt-4">
-            <a href="booking.html" class="btn btn-lg me-2" role="button">Get a Ticket</a>
-            <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a>
+
+          <div class="mt-5 ">
+            <a href="booking.html" class="btn btn-lg booking-btn me-2" role="button">Get a Ticket</a>
+            <a href="#features" class="btn btn-lg btn-learnmore">Learn More</a>
           </div>
 
           <!-- small avatars/testimonials hint -->
@@ -79,62 +79,52 @@
           </div>
         </div>
 
-        <!-- Right visual card -->
+          <!-- Right visual card -->
         <div class="col-lg-6 d-none d-lg-block">
-          <div class="d-flex justify-content-end">
-            <div class="card-mock" style="width:320px;">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <small class="text-muted">Branch: Downtown Clinic</small>
-                <small class="text-muted">Status: Open</small>
-              </div>
-
-              <h3 class="mb-0">Ticket <span class="text-muted">#</span><strong> 0245</strong></h3>
-              <p class="mb-1 text-muted" style="font-size:0.95rem;">Estimated wait: <strong>12 min</strong></p>
-
-              <div style="height:1px; background: #eef2f3; margin: 0.8rem 0;"></div>
-
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <small class="text-muted">Next:</small>
-                  <div><strong>0251</strong></div>
-                </div>
-                <div class="text-end">
-                  <small class="text-muted">People before you</small>
-                  <div><strong>3</strong></div>
-                </div>
-              </div>
+          <div class="d-flex justify-content-end position-relative">
+             <img src="assets/images/hero-person.png" alt="Booking Illustration" class="img-fluid hero-img" >
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+  
+</header>
 
-  <!-- STATS -->
-  <section id="stats" class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="stat">
-            <h3 class="mb-0">524M</h3>
-            <p class="mb-0 text-muted">Users Worldwide</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="stat">
-            <h3 class="mb-0">124+</h3>
-            <p class="mb-0 text-muted">Countries</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="stat">
-            <h3 class="mb-0">184M</h3>
-            <p class="mb-0 text-muted">Customer Reviews</p>
-          </div>
+
+
+<!-- STATS -->
+<section id="stats" class="py-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      
+      <div class="col-md-4">
+        <div class="stat">
+          <i class="fas fa-users fa-2x mb-2" style="color: var(--dark);"></i>
+          <h3 class="mb-0">524M</h3>
+          <p class="mb-0 text-muted">Users Worldwide</p>
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="stat">
+          <i class="fas fa-globe fa-2x mb-2" style="color: var(--dark);"></i>
+          <h3 class="mb-0">124+</h3>
+          <p class="mb-0 text-muted">Countries</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat">
+          <i class="fas fa-star fa-2x mb-2" style="color: var(--dark);"></i>
+          <h3 class="mb-0">184M</h3>
+          <p class="mb-0 text-muted">Customer Reviews</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- FEATURES -->
   <section id="features" class="py-5">
@@ -142,68 +132,74 @@
       <div class="row align-items-center mb-4">
         <div class="col-lg-7">
           <h2>Smarter Queue, Better Service</h2>
-          <p class="text-muted">Manage tickets, set priorities, and notify customers in real time — without the chaos.</p>
+          <p class="text-muted">Manage tickets, set priorities, and notify customers in real time without the chaos</p>
         </div>
-        <div class="col-lg-5 text-lg-end">
+        <!-- <div class="col-lg-5 text-lg-end">
           <a class="btn booking-btn" href="booking.html">Book a Ticket</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="row g-3">
-        <div class="col-md-4">
-          <div class="feature-card h-100">
-            <h5>Online Ticketing</h5>
-            <p class="text-muted small">Let users take a number from their phone and wait remotely.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="feature-card h-100">
-            <h5>Real-time Notifications</h5>
-            <p class="text-muted small">Web notifications and SMS reminders before the turn.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="feature-card h-100">
-            <h5>Admin Dashboard</h5>
-            <p class="text-muted small">Call next, pause queues, and monitor waiting times with ease.</p>
-          </div>
-        </div>
-      </div>
+     <div class="col-md-4">
+       <div class="feature-card h-100 text-center p-3">
+         <i class="fas fa-ticket-alt fa-2x mb-3" style="color: var(--dark);"></i>
+         <h5>Online Ticketing</h5>
+         <p class="text-muted small">Let users take a number from their phone and wait remotely.</p>
+       </div>
+     </div>
+   
+     <div class="col-md-4">
+       <div class="feature-card h-100 text-center p-3">
+         <i class="fas fa-bell fa-2x mb-3" style="color: var(--dark);"></i>
+         <h5>Real-time Notifications</h5>
+         <p class="text-muted small">Web notifications and SMS reminders before the turn.</p>
+       </div>
+     </div>
+   
+     <div class="col-md-4">
+       <div class="feature-card h-100 text-center p-3">
+         <i class="fas fa-chart-line fa-2x mb-3" style="color: var(--dark);"></i>
+         <h5>Admin Dashboard</h5>
+         <p class="text-muted small">Call next, pause queues, and monitor waiting times with ease.</p>
+       </div>
+     </div>
     </div>
   </section>
 
   <!-- DETAILS / CARDS -->
-  <section class="py-4">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-7">
-          <div class="p-4" style="background:white;border-radius:12px; box-shadow:0 8px 30px rgba(10,18,20,0.04)">
-            <h4>Simple, Fast & Hassle-Free</h4>
-            <p class="text-muted">Sign up, choose your branch and service, and get a ticket in under a minute. Works across devices.</p>
-            <a href="booking.html" class="btn booking-btn">Create an Account & Book</a>
-          </div>
-        </div>
+<section class="py-4">
+  <div class="container">
+    <div class="row g-4">
 
-        <div class="col-lg-5">
-          <div class="p-3" style="background:#fff; border-radius:12px;">
-            <h6 class="mb-3">Available cards</h6>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div style="font-weight:700;">98,500</div>
-                <small class="text-muted">Walk-ins served</small>
-              </div>
-              <div class="text-end">
-                <div style="font-weight:700;">76,280</div>
-                <small class="text-muted">Online tickets</small>
-              </div>
+   
+      <div class="col-lg-7">
+        <div class="details-card">
+          <h5>Simple and Fast</h5>
+          <p class="text-muted">Sign up, choose your branch and service, and get a ticket in under a minute. Works across devices.</p>
+          <a href="booking.html" class="btn booking-btn">Create an Account & Book</a>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="details-card">
+          <h5 class="mb-3">Available cards</h5>
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="card-number">98,500</div>
+              <small class="text-muted">Walk-ins served</small>
+            </div>
+            <div class="text-end">
+              <div class="card-number">76,280</div>
+              <small class="text-muted">Online tickets</small>
             </div>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="py-5">
@@ -251,18 +247,19 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  <section class="py-4">
+<!-- PARTNERS -->
+<section class="partners-section py-4">
   <div class="container text-center">
     <p class="text-muted mb-3">Accepted Payment Methods in Egypt</p>
-    <div class="d-flex justify-content-center gap-4 flex-wrap align-items-center">
-      <img src="assets/images/fawry.png" alt="Fawry" style="height:30px; opacity:0.9;">
-      <img src="assets/images/visa.png" alt="Visa" style="height:30px; opacity:0.9;">
-      <img src="assets/images/vodafone-cash.jpg" alt="Vodafone Cash" style="height:30px; opacity:0.9;">
-      <img src="assets/images/instapay.png" alt="InstaPay" style="height:30px; opacity:0.9;">
+    <div class="partners-logos">
+      <img src="assets/images/fawry.jpeg" alt="Fawry">
+      <img src="assets/images/visa.png" alt="Visa">
+      <img src="assets/images/vodafone-cash.png" alt="Vodafone Cash">
+      <img src="assets/images/instapay.png" alt="InstaPay">
     </div>
   </div>
 </section>
+
 
   <!-- CTA -->
   <section class="py-5">
