@@ -266,7 +266,11 @@ body {
     row-gap: 2rem;;
   }
 }
-
+@media (max-width: 576px) {
+  #details .details-card {
+    margin-bottom: 1.5rem; 
+  }
+}
 
 /* ===============================
    Testimonials
