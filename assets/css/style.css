@@ -245,6 +245,25 @@ body {
   color: var(--muted);
 }
 
+#stats {
+  margin-bottom: 2rem; 
+}
+
+#features {
+  padding-top: 2.5rem; 
+}
+
+@media (max-width: 768px) {
+  #stats .row {
+    row-gap: 2rem; 
+  }
+
+  #features .row {
+    row-gap: 2rem;
+  }
+}
+
+
 /* ===============================
    Testimonials
 ================================= */
