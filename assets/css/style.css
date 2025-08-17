@@ -261,6 +261,10 @@ body {
   #features .row {
     row-gap: 2rem;
   }
+
+  #details .row{
+    row-gap: 2rem;;
+  }
 }
 
 
