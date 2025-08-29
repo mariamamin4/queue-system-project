@@ -1,31 +1,34 @@
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-if (!loggedInUser || loggedInUser.role !== "user") {
-    alert("Please login first.");
-    window.location.href = "login.html";
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.getElementById("bookingForm");
 
-
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // اجمع البيانات من الفورم
-    const bookingData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        branch: document.getElementById('branch').value,
-        service: document.getElementById('service').value,
-        date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
-        ticketNumber: Math.floor(Math.random() * 9000) + 1000, // رقم عشوائي للتذكرة
-        status: "waiting",
-         username: loggedInUser.username
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    // ✅ نجيب آخر رقم تذكرة محفوظ ونزود عليه 1
+    let lastTicketNumber = parseInt(localStorage.getItem("lastTicketNumber")) || 0;
+    lastTicketNumber++;
+    localStorage.setItem("lastTicketNumber", lastTicketNumber);
+
+    const newBooking = {
+      id: Date.now(),
+      username: loggedInUser?.username,
+      service: document.getElementById("service").value,
+      branch: document.getElementById("branch").value,
+      ticketNumber: lastTicketNumber,
+      status: "waiting",
+      date: new Date().toLocaleDateString(),
+      time: new Date().toLocaleTimeString(),
+      wait: Math.floor(Math.random() * 15) + 5 + " mins"
     };
 
-    // خزّن البيانات في localStorage
- let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
-bookings.push(bookingData);
-localStorage.setItem('bookings', JSON.stringify(bookings));
+    bookings.push(newBooking);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+    localStorage.setItem("currentBooking", JSON.stringify(newBooking));
 
-    // انتقل لصفحة التذكرة
-    window.location.href = 'ticket.html';
+    // ✅ أول ما يحجز يروح يعرض التذكرة
+    window.location.href = "ticket.html";
+  });
 });

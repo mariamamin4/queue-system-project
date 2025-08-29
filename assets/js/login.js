@@ -9,17 +9,15 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const foundUser = users.find(user => user.username === username && user.password === password);
 
     if (foundUser) {
-        // تخزين بيانات المستخدم الحالي
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
-        // توجيه بناءً على الدور
         if (foundUser.role === "admin") {
             window.location.href = "admin.html";
         } else {
             window.location.href = "booking.html";
         }
     } else {
-        alert("Invalid username or password");
+        const msg = document.getElementById("loginMessage");
+        msg.innerHTML = `<span class="text-danger">Invalid username or password</span>`;
     }
 });
-

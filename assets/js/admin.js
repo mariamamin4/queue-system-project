@@ -1,76 +1,88 @@
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-if (!loggedInUser || loggedInUser.role !== "admin") {
-    alert("Access denied! Please login as admin.");
-    window.location.href = "login.html";
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const queueTable = document.getElementById("queueTable");
+  const clearBtn = document.getElementById("clearAllBtn");
+  const callNextBtn = document.getElementById("callNextBtn");
 
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("Access denied! Admins only.");
+    window.location.href = "index.html";
+    return;
+  }
 
-// جلب بيانات الحجز من localStorage
-let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-localStorage.setItem('bookings', JSON.stringify(bookings));
-
-// عرض الحجوزات في الجدول
-function renderQueue() {
-    const tableBody = document.getElementById('queueTable');
-    tableBody.innerHTML = '';
+  function renderQueue() {
+    queueTable.innerHTML = "";
 
     if (bookings.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">No bookings in queue</td></tr>`;
-        return;
+      queueTable.innerHTML = `
+        <tr>
+          <td colspan="6" class="text-center text-muted">No bookings in the queue.</td>
+        </tr>`;
+      return;
     }
 
-    bookings.forEach((b, index) => {
-        tableBody.innerHTML += `
-            <tr>
-                <td>${b.ticketNumber}</td>
-                <td>${b.name}</td>
-                <td>${b.branch}</td>
-                <td>${b.service}</td>
-                <td>${b.status}</td>
-                <td>
-                    <button class="btn btn-sm btn-primary" onclick="callTicket(${index})">Call</button>
-                    <button class="btn btn-sm btn-danger" onclick="deleteTicket(${index})">Delete</button>
-                </td>
-            </tr>
-        `;
-    });
-}
+    bookings.forEach((booking, index) => {
+      const row = document.createElement("tr");
 
-// نداء التذكرة
-function callTicket(index) {
-    bookings[index].status = "called";
-    localStorage.setItem('currentBooking', JSON.stringify(bookings[index]));
-    renderQueue();
-    alert(`Ticket #${bookings[index].ticketNumber} has been called`);
-}
+      row.innerHTML = `
+        <td><span class="fw-bold">${booking.ticketNumber}</span></td>
+        <td>${booking.username}</td>
+        <td>${booking.branch}</td>
+        <td>${booking.service}</td>
+        <td>
+          <span class="badge ${booking.status === "called" ? "bg-success" : "bg-secondary"}">
+            ${booking.status}
+          </span>
+        </td>
+        <td>
+          <button class="btn btn-success btn-sm me-2 callBtn">Call</button>
+          <button class="btn btn-danger btn-sm deleteBtn">Delete</button>
+        </td>
+      `;
 
-// حذف التذكرة
-function deleteTicket(index) {
-    if (confirm("Delete this ticket?")) {
+      // Call button
+      row.querySelector(".callBtn").addEventListener("click", () => {
+        booking.status = "called";
+        localStorage.setItem("bookings", JSON.stringify(bookings));
+        localStorage.setItem("currentBooking", JSON.stringify(booking));
+        renderQueue();
+      });
+
+      // Delete button
+      row.querySelector(".deleteBtn").addEventListener("click", () => {
         bookings.splice(index, 1);
-        localStorage.removeItem('currentBooking');
+        localStorage.setItem("bookings", JSON.stringify(bookings));
+        localStorage.removeItem("currentBooking");
         renderQueue();
-    }
-}
+      });
 
-// زر "Call Next"
-document.getElementById('callNextBtn').addEventListener('click', function() {
+      queueTable.appendChild(row);
+    });
+  }
+
+  // Clear All
+  clearBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear all bookings?")) {
+      bookings = [];
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+      localStorage.removeItem("currentBooking");
+      renderQueue();
+    }
+  });
+
+  // Call Next (أول واحد في الطابور)
+  callNextBtn.addEventListener("click", () => {
     if (bookings.length > 0) {
-        callTicket(0);
+      bookings[0].status = "called";
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+      localStorage.setItem("currentBooking", JSON.stringify(bookings[0]));
+      renderQueue();
     } else {
-        alert("No tickets to call");
+      alert("No bookings available.");
     }
-});
+  });
 
-// زر "Clear All"
-document.getElementById('clearAllBtn').addEventListener('click', function() {
-    if (confirm("Clear all bookings?")) {
-        bookings = [];
-        localStorage.removeItem('currentBooking');
-        renderQueue();
-    }
+  renderQueue();
 });
-
-// تشغيل أول مرة
-renderQueue();

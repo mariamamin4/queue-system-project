@@ -15,11 +15,11 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.png" alt="Logo" style="height:34px;">
-        Queuely
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/logo.png" alt="Logo"  class="me-2">
+        <span class="fw-bold"></span>
       </a>
     </div>
   </nav>
@@ -27,27 +27,29 @@
   <!-- ADMIN PANEL -->
   <div class="container my-5">
     <div class="admin-card">
-      <h3 class="mb-4">Admin Dashboard</h3>
+      <h3 class="mb-4 text-center fw-bold">Admin Dashboard</h3>
 
-      <table class="table table-bordered align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Ticket #</th>
-            <th>Name</th>
-            <th>Branch</th>
-            <th>Service</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="queueTable">
-          <!--bookings-->
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle shadow-sm rounded">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col">Ticket #</th>
+              <th scope="col">Name</th>
+              <th scope="col">Branch</th>
+              <th scope="col">Service</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="queueTable">
+            <!-- bookings get injected here -->
+          </tbody>
+        </table>
+      </div>
 
-      <div class="mt-4">
-        <button id="callNextBtn" class="btn btn-success me-2">Call Next</button>
-        <button id="clearAllBtn" class="btn btn-danger">Clear All</button>
+      <div class="text-center mt-4">
+        <button id="callNextBtn" class="btn btn-success me-2">📢 Call Next</button>
+        <button id="clearAllBtn" class="btn btn-danger">🗑️ Clear All</button>
       </div>
     </div>
   </div>

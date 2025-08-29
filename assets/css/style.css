@@ -69,6 +69,14 @@ body {
   margin-left: 10px;
 }
 
+.navbar-light .navbar-toggler {
+  border: none; 
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.85%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 
 /* ===============================
    Buttons
@@ -76,33 +84,41 @@ body {
 .btn-success {
   background-color: var(--accent) !important;
    border-radius: 10px;
- 
+ transition: transform 0.3s ease;
 }
 
 .btn-success:hover {
   background-color: var(--dark)!important;
+    transform: scale(1.1)!important; 
 }
 .btn-sign{
     color: white !important;
   border-color: var(--muted) !important;
   background-color: var(--dark);
    border-radius: 10px;
+    transition: transform 0.3s ease;
+
 }
 .btn-sign:hover{
      color: var(--white) !important;
   border-color: var(--accent) !important;
   background-color: var(--blue);
+  transform: scale(1.03)!important; 
 }
 
 .btn-outline {
   color: var(--dark) !important;
   border-color: var(--accent) !important;
    border-radius: 10px;
+    transition: transform 0.3s ease;
+
 }
 
 .btn-outline:hover {
   background-color: var(--dark) !important;
   color: white !important;
+  transform: scale(1.03)!important; 
+
 }
 .btn-outline-light{
 
@@ -118,21 +134,29 @@ body {
   border:1px solid var(--blue);
     background-color: var(--muted);
     border-radius: 10px;
+     transition: transform 0.3s ease;
+
 }
 .btn-learnmore:hover{
   color:var(--white);
   border:1px solid var(--blue);
   background-color: var(--babyblu);
+  transform: scale(1.1)!important; 
+
 }
 .booking-btn{
   background-color: #2776c4 !important;
   color: white;
   border-radius: 10px;
    padding: 6px 14px;
+    transition: transform 0.3s ease;
+
 }
 .booking-btn:hover{
   background-color: var(--babyblu)!important;
   color: var(--dark);
+   transform: scale(1.1)!important; 
+
 }
 .singup-login{
   display: flex;
@@ -141,6 +165,20 @@ body {
    gap:20px;
     border-radius: 10px;
 }
+.cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  background: #007bff;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.cta-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
 
 
 /* ===============================
@@ -237,12 +275,12 @@ body {
     }
 
 .stat h3 {
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: bold;
   color: var(--dark);
 }
-
 .stat p {
-  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 #stats {
@@ -273,26 +311,26 @@ body {
 }
 
 /* ===============================
-   Testimonials
+   Reviews
 ================================= */
-.testimonial {
+.reviews {
   background: white;
   padding: 1rem 1.5rem; 
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); 
 }
 
-.testimonial strong {
+.reviews strong {
   display: block;
   margin-bottom: 0.3rem;
 }
 
-.testimonial p {
+.reviews p {
   font-size: 0.95rem;
   color: var(--muted);
 }
 
-.testimonial img {
+.reviews img {
   width: 80px;
   height: 80px;
   object-fit: cover;
@@ -347,12 +385,31 @@ body {
 ================================= */
 
 .feature-card {
-      background:var(--muted);
-      border-radius: 12px;
-      padding: 1.25rem;
-      box-shadow: 0 6px 20px rgba(15,20,25,0.05);
-      height:100%;
-    }
+  background: var(--muted);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.1ms ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-15px) !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+.feature-link {
+  color: inherit;       
+  display: block;       
+}
+.feature-link, 
+.feature-link:hover,
+.feature-link:focus,
+.feature-link:active {
+  text-decoration: none !important;
+  color: inherit; 
+}
+
+
 
 /* ===============================
    CTA
@@ -430,12 +487,21 @@ footer a:hover , footer li:hover{
 /* ===============================
    Admin Table
 ================================= */
-    .admin-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
+   .admin-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table td button {
+  min-width: 70px;
+}
+
 /* =============================
       login page
 ================================*/
@@ -451,6 +517,23 @@ footer a:hover , footer li:hover{
     .login-form{
        background-color: var(--formslable);
     }
+
+  .signup-link {
+  color: var(--dark);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+#loginMessage {
+  font-size: 0.9rem;
+}
+
 /* =============================
       signup page
 ================================*/
