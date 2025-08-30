@@ -41,19 +41,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const adminBtn = document.getElementById("adminBtn");
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-  if (adminBtn) {
-    if (loggedInUser && loggedInUser.role === "admin") {
+  if (loggedInUser) {
+    // لو في يوزر مسجل
+    if (loggedInUser.role === "admin") {
       adminBtn.style.display = "block";
     } else {
       adminBtn.style.display = "none";
     }
+
+    // اخفي login/signup
+    if (loginBtn) loginBtn.style.display = "none";
+    if (signupBtn) signupBtn.style.display = "none";
+    if (logoutBtn) logoutBtn.style.display = "inline-block";
+
+  } else {
+    // لو مفيش يوزر
+    if (adminBtn) adminBtn.style.display = "none";
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (signupBtn) signupBtn.style.display = "inline-block";
+    if (logoutBtn) logoutBtn.style.display = "none";
   }
 
+  // logout
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html"; // يرجع للهوم
+    });
+  }
   
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();

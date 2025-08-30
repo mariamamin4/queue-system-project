@@ -11,22 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const currentBooking = JSON.parse(localStorage.getItem("currentBooking"));
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
   if (currentBooking) {
+
+    const waitingCount = bookings.filter(
+      (b) =>
+        b.branch === currentBooking.branch &&
+        b.service === currentBooking.service &&
+        b.status === "waiting" &&
+        b.id < currentBooking.id
+    ).length;
+
     ticketNumber.textContent = currentBooking.ticketNumber;
     ticketName.textContent = loggedInUser?.username || "Guest";
     ticketBranch.textContent = currentBooking.branch;
     ticketService.textContent = currentBooking.service;
     ticketDate.textContent = currentBooking.date;
     ticketTime.textContent = currentBooking.time;
-    ticketWait.textContent = currentBooking.wait;
+    ticketWait.textContent = waitingCount; 
     status.textContent = currentBooking.status;
   } else {
     document.querySelector(".ticket-card").innerHTML = "<p>No booking found.</p>";
   }
 
   cancelBtn.addEventListener("click", () => {
-    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
     const index = bookings.findIndex((b) => b.id === currentBooking.id);
 
     if (index !== -1) {
